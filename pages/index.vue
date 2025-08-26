@@ -1,10 +1,12 @@
 <template>
   <div class="home">
-    <h1>Welcome to Furniro</h1>
+   <HeroSection />
   </div>
 </template>
 
 <script setup lang="ts">
+import HeroSection from '~/components/sections/HeroSection.vue';
+
 definePageMeta({
   layout: 'default',
   pageTitle: 'Home',
@@ -13,8 +15,4 @@ definePageMeta({
 
 <style scoped lang="scss">
 @use '../assets/scss/main.scss';
-.home {
-  padding: 2rem;
-  text-align: center;
-}
 </style>
