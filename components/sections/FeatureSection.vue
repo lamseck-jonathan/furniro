@@ -166,23 +166,53 @@ const setActiveTab = (tabId) => {
 }
 
 @media (max-width: 768px) {
+  .feature-section {
+    padding: 32px 0;
+  }
+  
+  .feature-section__container {
+    padding: 0 15px;
+  }
+  
   .feature-section__tabs {
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 24px;
   }
   
   .feature-section__tab {
-    padding: 16px 24px;
+    padding: 12px 20px;
+    font-size: 18px;
+    margin: 5px;
+  }
+  
+  .feature-section__description-container {
+    padding: 0 20px;
+  }
+  
+  .feature-section__description {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 16px;
   }
   
   .feature-section__images {
     flex-direction: column;
     align-items: center;
+    gap: 20px;
+    margin-top: 32px;
   }
   
-  .feature-section__image {
+  .feature-section__image-container {
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
+    height: 200px;
+  }
+  
+  .feature-section__image-container--right .feature-section__image {
+    transform: scale(1.05);
+    object-position: center -10px;
   }
 }
 </style>

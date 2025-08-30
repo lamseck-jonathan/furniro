@@ -146,8 +146,19 @@
       padding: $spacing-md;
     }
 
+    &__content {
+      width: 100%;
+      margin-left: 0;
+      padding: $spacing-lg;
+    }
+
     &__card {
       padding: $spacing-md;
+      width: 100%;
+      
+      &-content {
+        text-align: center;
+      }
     }
 
     &__title {
