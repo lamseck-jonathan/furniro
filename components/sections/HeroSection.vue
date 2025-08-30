@@ -22,6 +22,16 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue'
+import { useScrollAnimation } from '~/composables/useScrollAnimation'
+
+const { animateFromBottom } = useScrollAnimation()
+
+onMounted(() => {
+  animateFromBottom('.hero-section__card', {
+    duration: 1
+  })
+})
 </script>
 
 <style scoped lang="scss">

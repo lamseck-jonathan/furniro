@@ -49,7 +49,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { useScrollAnimation } from '~/composables/useScrollAnimation'
 
 const activeTab = ref('description')
 
@@ -67,6 +68,18 @@ const productDescription = {
 const setActiveTab = (tabId) => {
   activeTab.value = tabId
 }
+
+const { animateFromBottom } = useScrollAnimation()
+
+onMounted(() => {
+  animateFromBottom('.feature-section__tabs')
+  
+  animateFromBottom('.feature-section__description-container')
+  
+  animateFromBottom('.feature-section__image-container', {
+    stagger: 0.2
+  })
+})
 </script>
 
 <style scoped>
