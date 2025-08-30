@@ -3,6 +3,7 @@
    <HeroSection />
    <CategorySection />
    <FeatureSection />
+   <OfferSection />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import HeroSection from '~/components/sections/HeroSection.vue';
 import CategorySection from '~/components/sections/CategorySection.vue';
 import FeatureSection from '~/components/sections/FeatureSection.vue';
+import OfferSection from '~/components/sections/OfferSection.vue';
 
 definePageMeta({
   layout: 'default',
