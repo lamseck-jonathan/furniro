@@ -7,19 +7,19 @@
                 </NuxtLink>
             </div>
             
-            <nav class="nav-header__nav">
+            <nav class="nav-header__nav" :class="{ 'nav-header__nav--open': mobileMenuOpen }">
                 <ul class="nav-header__nav-list">
                     <li class="nav-header__nav-item">
-                        <a href="#home" class="nav-header__nav-link">Home</a>
+                        <a href="#home" class="nav-header__nav-link" @click="closeMobileMenu">Home</a>
                     </li>
                     <li class="nav-header__nav-item">
-                        <a href="#shop" class="nav-header__nav-link">Shop</a>
+                        <a href="#shop" class="nav-header__nav-link" @click="closeMobileMenu">Shop</a>
                     </li>
                     <li class="nav-header__nav-item">
-                        <a href="#about" class="nav-header__nav-link">About</a>
+                        <a href="#about" class="nav-header__nav-link" @click="closeMobileMenu">About</a>
                     </li>
                     <li class="nav-header__nav-item">
-                        <a href="#contact" class="nav-header__nav-link">Contact</a>
+                        <a href="#contact" class="nav-header__nav-link" @click="closeMobileMenu">Contact</a>
                     </li>
                 </ul>
             </nav>
@@ -38,11 +38,32 @@
                     <img src="~/assets/cart.svg" alt="Shopping Cart" class="nav-header__action-icon" />
                 </button>
             </div>
+
+            <button 
+                class="nav-header__mobile-toggle"
+                @click="toggleMobileMenu"
+                aria-label="Toggle mobile menu"
+            >
+                <span class="nav-header__hamburger"></span>
+                <span class="nav-header__hamburger"></span>
+                <span class="nav-header__hamburger"></span>
+            </button>
         </div>
     </header>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
+const mobileMenuOpen = ref(false)
+
+const toggleMobileMenu = () => {
+  mobileMenuOpen.value = !mobileMenuOpen.value
+}
+
+const closeMobileMenu = () => {
+  mobileMenuOpen.value = false
+}
 </script>
 
 <style scoped lang="scss">
@@ -136,6 +157,95 @@
 
     .nav-header__action-btn:hover & {
       filter: brightness(0) saturate(100%) invert(54%) sepia(84%) saturate(491%) hue-rotate(19deg) brightness(95%) contrast(90%);
+    }
+  }
+
+  &__mobile-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    gap: 4px;
+    
+    .nav-header__hamburger {
+      width: 24px;
+      height: 3px;
+      background-color: $text-dark;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-header {
+    &__container {
+      padding: 0 15px;
+      position: relative;
+    }
+
+    &__nav {
+      display: none;
+      
+      &.nav-header__nav--open {
+        display: block;
+      }
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: $white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      z-index: 1000;
+
+      &--open {
+        max-height: 400px;
+      }
+
+      &-list {
+        flex-direction: column;
+        gap: 0;
+        padding: 20px;
+      }
+
+      &-item {
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+        
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      &-link {
+        display: block;
+        padding: 15px 0;
+        font-size: 18px;
+        width: 100%;
+      }
+    }
+
+    &__actions {
+      gap: 10px;
+      
+      .nav-header__action-btn {
+        width: 35px;
+        height: 35px;
+      }
+      
+      .nav-header__action-icon {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &__mobile-toggle {
+      display: flex;
     }
   }
 }
