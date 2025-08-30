@@ -4,12 +4,14 @@
     <main class="app__main-content">
       <slot />
     </main>
+    <Footer />
   </div>
 </template>
 
 <script setup>
 // Layout logic
 import NavHeader from '../components/navigation/NavHeader.vue';
+import Footer from '../components/Footer.vue';
 </script>
 
 <style lang="scss" scoped>
