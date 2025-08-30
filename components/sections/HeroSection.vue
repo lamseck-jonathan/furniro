@@ -29,12 +29,12 @@
 
 .hero-section {
   position: relative;
-  min-height: 100vh;
   overflow: hidden;
 
   &__container {
     position: relative;
     width: 100%;
+    height:812px;
     display: flex;
   }
 
@@ -43,6 +43,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     z-index: 1;
 
     &-image {
