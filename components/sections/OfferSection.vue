@@ -114,6 +114,12 @@
     gap: 30px;
   }
   
+  .offer-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  
   .offer-content {
     h3 {
       font-size: 20px;
