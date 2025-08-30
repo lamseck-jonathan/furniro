@@ -26,6 +26,7 @@
 
 <style scoped lang="scss">
 @use '~/assets/scss/abstracts/variables' as *;
+@use 'sass:color';
 
 .hero-section {
   position: relative;
@@ -114,7 +115,7 @@
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: darken($primary-color, 10%);
+      background-color: color.adjust($primary-color, $lightness: -10%);
       transform: translateY(-2px);
     }
 
