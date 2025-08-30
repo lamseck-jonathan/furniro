@@ -1,6 +1,10 @@
-# Nuxt Minimal Starter
+# Furniro - Furniture E-commerce Website
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A modern furniture e-commerce website built with Nuxt 3, featuring a responsive design and elegant user interface.
+
+## 🌐 Live Preview
+
+Visit the live website: [furniro.company-lamseck.com](https://furniro.company-lamseck.com)
 
 ## Setup
 
