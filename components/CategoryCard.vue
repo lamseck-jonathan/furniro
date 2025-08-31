@@ -37,11 +37,10 @@ withDefaults(defineProps<Props>(), {
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px);
   }
 
   &__image-container {
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
     margin-bottom: $spacing-md;
   }
@@ -50,11 +49,8 @@ withDefaults(defineProps<Props>(), {
     width: 100%;
     height: 480px;
     object-fit: cover;
+    border-radius: 10px;
     transition: transform 0.3s ease;
-
-    .category-card:hover & {
-      transform: scale(1.05);
-    }
   }
 
   &__content {
