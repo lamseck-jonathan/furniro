@@ -27,7 +27,19 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue'
+import { useScrollAnimation } from '~/composables/useScrollAnimation'
 import CategoryCard from '~/components/CategoryCard.vue';
+
+const { animateFromBottom } = useScrollAnimation()
+
+onMounted(() => {
+  animateFromBottom('.category-section__header')
+  
+  animateFromBottom('.category-card', {
+    stagger: 0.2
+  })
+})
 </script>
 
 <style scoped lang="scss">

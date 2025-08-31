@@ -46,6 +46,19 @@
   </section>
 </template>
 
+<script setup>
+import { onMounted } from 'vue'
+import { useScrollAnimation } from '~/composables/useScrollAnimation'
+
+const { animateFromBottom } = useScrollAnimation()
+
+onMounted(() => {
+  animateFromBottom('.offer-section__item', {
+    stagger: 0.15
+  })
+})
+</script>
+
 <style lang="scss" scoped>
 .offer-section {
   background-color: #faf3ea;
